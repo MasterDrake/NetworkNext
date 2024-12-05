@@ -32,7 +32,7 @@
 const char * bind_address = "0.0.0.0:50000";
 const char * server_address = "127.0.0.1:50000";
 const char * server_datacenter = "local";
-const char * server_backend_hostname = "server-dev.virtualgo.net";
+//const char * server_backend_hostname = "server-dev.virtualgo.net";
 
 static volatile int quit = 0;
 
@@ -65,8 +65,10 @@ int main()
     signal( SIGINT, interrupt_handler ); signal( SIGTERM, interrupt_handler );
 
     next_config_t config;
+    config.disable_autodetect = true;
+    config.disable_network_next = true;
     next_default_config( &config );
-    strncpy_s( config.server_backend_hostname, server_backend_hostname, sizeof(config.server_backend_hostname) - 1 );
+    //strncpy_s( config.server_backend_hostname, server_backend_hostname, sizeof(config.server_backend_hostname) - 1 );
 
     if ( next_init( NULL, &config ) != NEXT_OK )
     {

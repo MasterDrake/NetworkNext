@@ -50,8 +50,10 @@ void server_packet_received( next_server_t * server, void * context, const next_
 int main()
 {
     signal( SIGINT, interrupt_handler ); signal( SIGTERM, interrupt_handler );
-
-    if ( next_init( NULL, NULL ) != NEXT_OK )
+    next_config_t config;
+    config.disable_autodetect = true;
+    config.disable_network_next = true;
+    if ( next_init( NULL, &config ) != NEXT_OK )
     {
         printf( "error: could not initialize network next\n" );
         return 1;

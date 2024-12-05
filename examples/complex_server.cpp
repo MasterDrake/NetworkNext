@@ -33,9 +33,9 @@
 #include <map>
 
 const char * bind_address = "0.0.0.0:50000";
-const char * server_address = "127.0.0.1:50000";
+const char * server_address = "172.23.226.14:50000";
 const char * server_datacenter = "local";
-const char * server_backend_hostname = "server-dev.virtualgo.net";
+//const char * server_backend_hostname = "server-dev.virtualgo.net";
 
 // -------------------------------------------------------------
 
@@ -430,8 +430,9 @@ int main()
     next_allocator( malloc_function, free_function );
 
     next_config_t config;
+    config.disable_network_next = true;
     next_default_config( &config );
-    strncpy_s( config.server_backend_hostname, server_backend_hostname, sizeof(config.server_backend_hostname) - 1 );
+    //strncpy_s( config.server_backend_hostname, server_backend_hostname, sizeof(config.server_backend_hostname) - 1 );
 
     if ( next_init( &global_context, &config ) != NEXT_OK )
     {

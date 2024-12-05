@@ -31,7 +31,7 @@
 
 const char * bind_address = "0.0.0.0:0";
 const char * server_address = "127.0.0.1:50000";
-const char * buyer_public_key = "5Vr+VZdUXckgQwHdPRftc/8IUWDL7ZftvBOzE/+Zpp+PIjSU0Kxmwg==";
+//const char * buyer_public_key = "5Vr+VZdUXckgQwHdPRftc/8IUWDL7ZftvBOzE/+Zpp+PIjSU0Kxmwg==";
 
 static volatile int quit = 0;
 
@@ -55,8 +55,10 @@ int main()
     signal( SIGINT, interrupt_handler ); signal( SIGTERM, interrupt_handler );
     
     next_config_t config;
+    config.disable_autodetect = true;
+    config.disable_network_next = true;
     next_default_config( &config );
-    strncpy_s( config.buyer_public_key, buyer_public_key, sizeof(config.buyer_public_key) - 1 );
+    //strncpy_s( config.buyer_public_key, buyer_public_key, sizeof(config.buyer_public_key) - 1 );
 
     if ( next_init( NULL, &config ) != NEXT_OK )
     {

@@ -200,12 +200,13 @@ int main( int argc, char ** argv )
     srand( (unsigned int) time( NULL ) );
 
     signal( SIGINT, interrupt_handler ); signal( SIGTERM, interrupt_handler );
-    
     next_config_t config;
+    config.disable_autodetect = true;
+    config.disable_network_next = true;
     next_default_config( &config );
-    strncpy( config.server_backend_hostname, server_backend_hostname, sizeof(config.server_backend_hostname) - 1 );
-    strncpy( config.buyer_public_key, buyer_public_key, sizeof(config.buyer_public_key) - 1 );
-    strncpy( config.buyer_private_key, buyer_private_key, sizeof(config.buyer_private_key) - 1 );
+    //strncpy( config.server_backend_hostname, server_backend_hostname, sizeof(config.server_backend_hostname) - 1 );
+    //strncpy( config.buyer_public_key, buyer_public_key, sizeof(config.buyer_public_key) - 1 );
+    //strncpy( config.buyer_private_key, buyer_private_key, sizeof(config.buyer_private_key) - 1 );
 
     next_allocator( malloc_function, free_function );
 

@@ -29,8 +29,10 @@
 int main()
 {
     next_quiet( true );
-
-    if ( next_init( NULL, NULL ) != NEXT_OK )
+    next_config_t config;
+    config.disable_autodetect = true;
+    config.disable_network_next = true;
+    if ( next_init( NULL, &config ) != NEXT_OK )
     {
         printf( "error: failed to initialize network next\n" );
     }
