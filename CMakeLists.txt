@@ -111,9 +111,9 @@ install(TARGETS next sodium
 install(EXPORT NextworkNextTargets
         FILE "NetworkNextConfig.cmake"
         NAMESPACE NetworkNext::
-        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/next)
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/network-next)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/NetworkNextConfigVersion.cmake
-        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/next)
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/network-next)
 
 #install(DIRECTORY include
 #        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
