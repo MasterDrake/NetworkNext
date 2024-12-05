@@ -103,7 +103,7 @@ endif()
 install(DIRECTORY include/ DESTINATION include)
 
 include(CMakePackageConfigHelpers)
-write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/network-nextonfigVersion.cmake
+write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/network-nextConfigVersion.cmake
         COMPATIBILITY SameMajorVersion)
 install(TARGETS next sodium
         EXPORT NextworkNextTargets
