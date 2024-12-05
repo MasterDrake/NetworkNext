@@ -30,6 +30,7 @@ int main()
 {
     next_quiet( true );
     next_config_t config;
+    next_default_config(&config);
     config.disable_autodetect = true;
     config.disable_network_next = true;
     if ( next_init( NULL, &config ) != NEXT_OK )

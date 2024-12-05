@@ -65,9 +65,9 @@ int main()
     signal( SIGINT, interrupt_handler ); signal( SIGTERM, interrupt_handler );
 
     next_config_t config;
+    next_default_config(&config);
     config.disable_autodetect = true;
     config.disable_network_next = true;
-    next_default_config( &config );
     //strncpy_s( config.server_backend_hostname, server_backend_hostname, sizeof(config.server_backend_hostname) - 1 );
 
     if ( next_init( NULL, &config ) != NEXT_OK )

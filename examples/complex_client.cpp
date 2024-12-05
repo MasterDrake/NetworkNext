@@ -395,9 +395,9 @@ int main()
     global_context.allocator = &global_allocator;
 
     next_config_t config;
+    next_default_config( &config );
     config.disable_autodetect = true;
     config.disable_network_next = true;
-    next_default_config( &config );
     //strncpy_s( config.buyer_public_key, buyer_public_key, sizeof(config.buyer_public_key) - 1 );
 
     if ( next_init( &global_context, &config ) != NEXT_OK )
