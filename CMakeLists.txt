@@ -103,7 +103,7 @@ endif()
 install(DIRECTORY include/ DESTINATION include)
 
 include(CMakePackageConfigHelpers)
-write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/NetworkNextConfigVersion.cmake
+write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/network-nextonfigVersion.cmake
         COMPATIBILITY SameMajorVersion)
 install(TARGETS next sodium
         EXPORT NextworkNextTargets
@@ -112,10 +112,10 @@ install(EXPORT NextworkNextTargets
         FILE "NetworkNextConfig.cmake"
         NAMESPACE NetworkNext::
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/network-next)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/NetworkNextConfigVersion.cmake
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/network-nextConfigVersion.cmake
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/network-next)
 
 #install(DIRECTORY include
 #        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
-#export(TARGETS next sodium NAMESPACE NetworkNext:: FILE NextworkNextTargets.cmake)
+#export(TARGETS next sodium NAMESPACE NetworkNext:: FILE network-nextTargets.cmake)
