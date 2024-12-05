@@ -82,8 +82,6 @@ install(TARGETS next sodium
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
 )
-install(DIRECTORY include/ DESTINATION include)
-
 # Install CMake configuration
 include(CMakePackageConfigHelpers)
 #write_basic_package_version_file(
@@ -94,12 +92,14 @@ include(CMakePackageConfigHelpers)
 install(EXPORT NextworkNextTargets
     FILE NextworkNextTargets.cmake
     NAMESPACE NextworkNext::
-    DESTINATION lib/cmake/next
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/next
 )
 install(FILES
     cmake/NextworkNextConfig.cmake
     "${CMAKE_CURRENT_BINARY_DIR}/NextworkNextConfigVersion.cmake"
-    DESTINATION lib/cmake/next
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/next
 )
 
-export(TARGETS next sodium NAMESPACE NetworkNext:: FILE NextworkNextTargets.cmake)
+install(DIRECTORY include/ DESTINATION include)
+
+#export(TARGETS next sodium NAMESPACE NetworkNext:: FILE NextworkNextTargets.cmake)
