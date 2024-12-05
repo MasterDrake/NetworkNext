@@ -20,9 +20,9 @@
     NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "next_packet_filter.h"
-#include "next_address.h"
-#include "next_hash.h"
+#include "networknext/next_packet_filter.h"
+#include "networknext/next_address.h"
+#include "networknext/next_hash.h"
 
 #include <memory.h>
 

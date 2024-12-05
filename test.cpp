@@ -20,8 +20,8 @@
     NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "next.h"
-#include "next_tests.h"
+#include "networknext/next.h"
+#include "networknext/next_tests.h"
 
 #include <stdio.h>
 #include <string.h>

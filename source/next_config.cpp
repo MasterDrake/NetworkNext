@@ -20,7 +20,7 @@
     NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "next_config.h"
+#include "networknext/next_config.h"
 
 uint8_t next_server_backend_public_key[32];
 

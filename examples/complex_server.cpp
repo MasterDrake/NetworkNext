@@ -20,9 +20,9 @@
     NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "next.h"
-#include "next_platform.h"
-#include "next_address.h"
+#include "networknext/next.h"
+#include "networknext/next_platform.h"
+#include "networknext/next_address.h"
 
 #include <stdio.h>
 #include <signal.h>

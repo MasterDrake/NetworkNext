@@ -22,9 +22,9 @@
 
 // IMPORTANT: you must compile this file with /ZW to get windows runtime components
 
-#include "next_platform_gdk.h"
-#include "next_platform.h"
-#include "next_address.h"
+#include "networknext/next_platform_gdk.h"
+#include "networknext/next_platform.h"
+#include "networknext/next_address.h"
 
 #ifdef _GAMING_XBOX
 

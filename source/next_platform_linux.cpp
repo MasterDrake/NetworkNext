@@ -20,12 +20,12 @@
     NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "next_platform_linux.h"
+#include "networknext/next_platform_linux.h"
 
 #if NEXT_PLATFORM == NEXT_PLATFORM_LINUX
 
-#include "next_platform.h"
-#include "next_address.h"
+#include "networknext/next_platform.h"
+#include "networknext/next_address.h"
 
 #include <netdb.h>
 #include <sys/types.h>

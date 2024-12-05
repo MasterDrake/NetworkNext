@@ -20,17 +20,17 @@
     NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "next_route_manager.h"
-#include "next_memory_checks.h"
-#include "next_address.h"
-#include "next_crypto.h"
-#include "next_config.h"
-#include "next_route_token.h"
-#include "next_continue_token.h"
-#include "next_platform.h"
-#include "next_packet_filter.h"
-#include "next_packets.h"
-#include "next_header.h"
+#include "networknext/next_route_manager.h"
+#include "networknext/next_memory_checks.h"
+#include "networknext/next_address.h"
+#include "networknext/next_crypto.h"
+#include "networknext/next_config.h"
+#include "networknext/next_route_token.h"
+#include "networknext/next_continue_token.h"
+#include "networknext/next_platform.h"
+#include "networknext/next_packet_filter.h"
+#include "networknext/next_packets.h"
+#include "networknext/next_header.h"
 
 #include <memory.h>
 

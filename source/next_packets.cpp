@@ -20,12 +20,12 @@
     NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "next_packets.h"
-#include "next_read_write.h"
-#include "next_header.h"
-#include "next_packet_filter.h"
-#include "next_serialize.h"
-#include "next_replay_protection.h"
+#include "networknext/next_packets.h"
+#include "networknext/next_read_write.h"
+#include "networknext/next_header.h"
+#include "networknext/next_packet_filter.h"
+#include "networknext/next_serialize.h"
+#include "networknext/next_replay_protection.h"
 
 #include <stdlib.h>
 #if NEXT_PLATFORM == NEXT_PLATFORM_WINDOWS || NEXT_PLATFORM == NEXT_PLATFORM_GDK

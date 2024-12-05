@@ -20,20 +20,20 @@
     NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "next_server.h"
-#include "next_queue.h"
-#include "next_hash.h"
-#include "next_pending_session_manager.h"
-#include "next_proxy_session_manager.h"
-#include "next_packet_filter.h"
-#include "next_header.h"
-#include "next_upgrade_token.h"
-#include "next_route_token.h"
-#include "next_continue_token.h"
-#include "next_autodetect.h"
-#include "next_internal_config.h"
-#include "next_platform.h"
-#include "next_relay_manager.h"
+#include "networknext/next_server.h"
+#include "networknext/next_queue.h"
+#include "networknext/next_hash.h"
+#include "networknext/next_pending_session_manager.h"
+#include "networknext/next_proxy_session_manager.h"
+#include "networknext/next_packet_filter.h"
+#include "networknext/next_header.h"
+#include "networknext/next_upgrade_token.h"
+#include "networknext/next_route_token.h"
+#include "networknext/next_continue_token.h"
+#include "networknext/next_autodetect.h"
+#include "networknext/next_internal_config.h"
+#include "networknext/next_platform.h"
+#include "networknext/next_relay_manager.h"
 
 #include <atomic>
 #include <stdio.h>

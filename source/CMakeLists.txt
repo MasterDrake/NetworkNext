@@ -70,7 +70,6 @@ target_sources(next PUBLIC
 							../include/networknext/next_util.h)
 
 target_include_directories(next PUBLIC ${CMAKE_SOURCE_DIR}/include)
-target_include_directories(next PUBLIC ${CMAKE_SOURCE_DIR}/include/networknext)
 target_link_libraries(next PRIVATE sodium)
 target_include_directories(next PUBLIC include)
 

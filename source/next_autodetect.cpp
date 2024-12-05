@@ -20,11 +20,11 @@
     NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "next_autodetect.h"
+#include "networknext/next_autodetect.h"
 
 #if NEXT_PLATFORM == NEXT_PLATFORM_LINUX || NEXT_PLATFORM == NEXT_PLATFORM_MAC || NEXT_PLATFORM == NEXT_PLATFORM_WINDOWS
 
-#include "next_config.h"
+#include "networknext/next_config.h"
 
 #include <stdio.h>
 #include <stdarg.h>
