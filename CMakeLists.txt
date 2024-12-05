@@ -109,7 +109,7 @@ install(TARGETS next sodium
         EXPORT NextworkNextTargets
         INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(EXPORT NextworkNextTargets
-        FILE "NetworkNextConfig.cmake"
+        FILE "network-nextConfig.cmake"
         NAMESPACE NetworkNext::
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/network-next)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/network-nextConfigVersion.cmake
