@@ -74,3 +74,32 @@ if(BUILD_FUZZ)
 
     target_compile_definitions(fuzz PRIVATE NEXT_FUZZ=1)
 endif()
+
+# Set installation rules
+install(TARGETS MyLibrary
+    EXPORT NextworkNextTargets
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+)
+install(DIRECTORY include/ DESTINATION include)
+
+# Install CMake configuration
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/NextworkNextConfigVersion.cmake"
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY SameMajorVersion
+)
+install(EXPORT NextworkNextTargets
+    FILE NextworkNextTargets.cmake
+    NAMESPACE NextworkNext::
+    DESTINATION lib/cmake/next
+)
+install(FILES
+    cmake/NextworkNextConfig.cmake
+    "${CMAKE_CURRENT_BINARY_DIR}/NextworkNextConfigVersion.cmake"
+    DESTINATION lib/cmake/next
+)
+
+export(TARGETS next NAMESPACE NetworkNext:: FILE NextworkNextTargets.cmake)
