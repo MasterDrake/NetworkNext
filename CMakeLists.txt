@@ -75,31 +75,47 @@ if(BUILD_FUZZ)
     target_compile_definitions(fuzz PRIVATE NEXT_FUZZ=1)
 endif()
 
-# Set installation rules
-install(TARGETS next sodium
-    EXPORT NextworkNextTargets
-    RUNTIME DESTINATION bin
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
-)
-# Install CMake configuration
-include(CMakePackageConfigHelpers)
-write_basic_package_version_file(
-    "${CMAKE_CURRENT_BINARY_DIR}/NextworkNextConfigVersion.cmake"
-    VERSION ${PROJECT_VERSION}
-    COMPATIBILITY SameMajorVersion
-)
-install(EXPORT NextworkNextTargets
-    FILE NextworkNextTargets.cmake
-    NAMESPACE NextworkNext::
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/next
-)
-install(FILES
-    cmake/NextworkNextConfig.cmake
-    "${CMAKE_CURRENT_BINARY_DIR}/NextworkNextConfigVersion.cmake"
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/next
-)
-
+## Set installation rules
+#install(TARGETS next sodium
+#    EXPORT NextworkNextTargets
+#    RUNTIME DESTINATION bin
+#    LIBRARY DESTINATION lib
+#    ARCHIVE DESTINATION lib
+#)
+## Install CMake configuration
+#include(CMakePackageConfigHelpers)
+#write_basic_package_version_file(
+#    "${CMAKE_CURRENT_BINARY_DIR}/NextworkNextConfigVersion.cmake"
+#    VERSION ${PROJECT_VERSION}
+#    COMPATIBILITY SameMajorVersion
+#)
+#install(EXPORT NextworkNextTargets
+#    FILE NextworkNextTargets.cmake
+#    NAMESPACE NextworkNext::
+#    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/next
+#)
+#install(FILES
+#    cmake/NextworkNextConfig.cmake
+#    "${CMAKE_CURRENT_BINARY_DIR}/NextworkNextConfigVersion.cmake"
+#    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/next
+#)
+#
 install(DIRECTORY include/ DESTINATION include)
+
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/NextworkNextConfigVersion.cmake
+        COMPATIBILITY SameMajorVersion)
+install(TARGETS next sodium
+        EXPORT NextworkNextTargets
+        INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(EXPORT NextworkNextTargets
+        FILE "NetworkNextConfig.cmake"
+        NAMESPACE NetworkNext::
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/next)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/NextworkNextConfigVersion.cmake
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/next)
+
+#install(DIRECTORY include
+#        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
 #export(TARGETS next sodium NAMESPACE NetworkNext:: FILE NextworkNextTargets.cmake)
