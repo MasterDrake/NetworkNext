@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 # Set the runtime library to static for the entire project
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
-project(next LANGUAGES CXX C)
+project(next LANGUAGES CXX C VERSION 1.0.0)
 
 # Set output directories
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -84,11 +84,11 @@ install(TARGETS next sodium
 )
 # Install CMake configuration
 include(CMakePackageConfigHelpers)
-#write_basic_package_version_file(
-#    "${CMAKE_CURRENT_BINARY_DIR}/NextworkNextConfigVersion.cmake"
-#    VERSION ${PROJECT_VERSION}
-#    COMPATIBILITY SameMajorVersion
-#)
+write_basic_package_version_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/NextworkNextConfigVersion.cmake"
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY SameMajorVersion
+)
 install(EXPORT NextworkNextTargets
     FILE NextworkNextTargets.cmake
     NAMESPACE NextworkNext::
