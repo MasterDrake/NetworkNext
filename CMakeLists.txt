@@ -76,7 +76,7 @@ if(BUILD_FUZZ)
 endif()
 
 # Set installation rules
-install(TARGETS MyLibrary
+install(TARGETS next sodium
     EXPORT NextworkNextTargets
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION lib
@@ -86,11 +86,11 @@ install(DIRECTORY include/ DESTINATION include)
 
 # Install CMake configuration
 include(CMakePackageConfigHelpers)
-write_basic_package_version_file(
-    "${CMAKE_CURRENT_BINARY_DIR}/NextworkNextConfigVersion.cmake"
-    VERSION ${PROJECT_VERSION}
-    COMPATIBILITY SameMajorVersion
-)
+#write_basic_package_version_file(
+#    "${CMAKE_CURRENT_BINARY_DIR}/NextworkNextConfigVersion.cmake"
+#    VERSION ${PROJECT_VERSION}
+#    COMPATIBILITY SameMajorVersion
+#)
 install(EXPORT NextworkNextTargets
     FILE NextworkNextTargets.cmake
     NAMESPACE NextworkNext::
@@ -102,4 +102,4 @@ install(FILES
     DESTINATION lib/cmake/next
 )
 
-export(TARGETS next NAMESPACE NetworkNext:: FILE NextworkNextTargets.cmake)
+export(TARGETS next sodium NAMESPACE NetworkNext:: FILE NextworkNextTargets.cmake)
