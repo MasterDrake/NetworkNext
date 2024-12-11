@@ -15,3 +15,7 @@ int
 sce_module
 *.elf
 *.log
+
+build
+build.zip
+out
