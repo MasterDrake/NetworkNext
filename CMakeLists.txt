@@ -28,7 +28,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(sodium)
 
-add_subdirectory(source)
+add_subdirectory(src)
 
 function(create_example_target example)
     add_executable(${example} ${example}.cpp)
@@ -53,11 +53,11 @@ if(BUILD_EXAMPLES)
 endif()
 
 if(BUILD_SOAK)
-    create_example_target(soak "")
+    create_example_target(soak)
 endif()
 
 if(BUILD_TEST)
-	create_example_target(test "")
+	create_example_target(test)
 endif()
 
 if(BUILD_FUZZ)
