@@ -4,7 +4,7 @@ target_include_directories(sodium PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
-target_sources(sodium PRIVATE 
+#target_sources(sodium PRIVATE 
 #							sodium.h
 #							sodium_blake2.h
 #							sodium_blake2b-compress-avx2.h
