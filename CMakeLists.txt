@@ -33,7 +33,7 @@ add_subdirectory(source)
 function(create_example_target example)
     add_executable(${example} ${example}.cpp)
 
-    target_link_libraries(${example} PRIVATE NetworkNext::next sodium)
+    target_link_libraries(${example} PRIVATE NetworkNext::next)
 
     # Platform-specific libraries
     if(APPLE)
@@ -63,7 +63,7 @@ endif()
 if(BUILD_FUZZ)
 	add_executable(fuzz soak.cpp)
 
-    target_link_libraries(fuzz PRIVATE NetworkNext::next sodium)
+    target_link_libraries(fuzz PRIVATE NetworkNext::next)
 
     # Platform-specific libraries
     if(APPLE)

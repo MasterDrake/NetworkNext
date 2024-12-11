@@ -37,15 +37,15 @@ int main()
     {
         printf( "error: failed to initialize network next\n" );
     }
-
+    
     printf( "\nRunning SDK tests:\n\n" );
-
+    
     next_run_tests();
-
+    
     next_term();
-
+    
     printf( "\n" );
-
+    
     fflush( stdout );
 
     return 0;

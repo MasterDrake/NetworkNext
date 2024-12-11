@@ -1,4 +1,4 @@
-add_library(next STATIC)
+add_library(next)
 add_library(NetworkNext::next ALIAS next)
 
 target_sources(next PRIVATE
@@ -75,7 +75,7 @@ target_include_directories(next PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
-target_link_libraries(next PRIVATE sodium)
+target_link_libraries(next PUBLIC sodium)
 
 target_compile_definitions(next PRIVATE NEXT_DEVELOPMENT)
 

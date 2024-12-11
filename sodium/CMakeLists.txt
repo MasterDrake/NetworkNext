@@ -212,7 +212,7 @@ target_compile_definitions(sodium PRIVATE
     $<$<BOOL:${CMAKE_SIZEOF_VOID_P} MATCHES 4>:NEXT_X86=1>
 )
 
- target_compile_options(sodium PUBLIC
+ target_compile_options(sodium PRIVATE
    $<$<CXX_COMPILER_ID:MSVC>:/arch:AVX2>
    $<$<CXX_COMPILER_ID:GNU>:-mavx2>
    $<$<CXX_COMPILER_ID:Clang>:-mavx2>
@@ -221,7 +221,7 @@ target_compile_definitions(sodium PRIVATE
  target_compile_options(sodium PRIVATE
    $<$<CXX_COMPILER_ID:Clang>:-mssse3 -msse4.1>
  )
-target_compile_options(sodium PUBLIC
+target_compile_options(sodium PRIVATE
   $<$<CXX_COMPILER_ID:MSVC>:/GR->
   $<$<CXX_COMPILER_ID:GNU>:-fno-rtti>
   $<$<CXX_COMPILER_ID:Clang>:-fno-rtti>
