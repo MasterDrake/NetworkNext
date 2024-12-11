@@ -22,7 +22,7 @@
 
 //#include "networknext/next.h"
 //#include "networknext/next_tests.h"
-#include "sodium.h"
+#include "sodium/sodium.h"
 #include <stdio.h>
 #include <string.h>
 #include <fstream>

@@ -15,6 +15,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 #    $<$<CXX_COMPILER_ID:MSVC>:/W4 /WX /fp:fast>
 #    $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -Werror -ffast-math>
 #)
+
 # Set warning flags depending on the compiler
 if(MSVC)
     # Use MSVC-specific warning level
@@ -24,11 +25,8 @@ else()
     add_compile_options(-Wall -Wextra -Werror) # -Wall: Enable most warnings, -Wextra: Enable extra warnings, -Werror: Treat warnings as errors
 endif()
 
-set(CMAKE_CXX_STANDARD 17)
-
-add_subdirectory(sodium)
-
-add_subdirectory(src)
+add_subdirectory(src/sodium)
+add_subdirectory(src/next)
 
 function(create_example_target example)
     add_executable(${example} ${example}.cpp)
@@ -101,7 +99,6 @@ endif()
 #)
 #
 install(DIRECTORY include/ DESTINATION include)
-install(DIRECTORY sodium/include/ DESTINATION include)
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/network-nextConfigVersion.cmake
